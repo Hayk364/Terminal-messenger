@@ -14,7 +14,7 @@
     #define CLEAR_COMMAND "clear"
 #endif
 
-#include "backend.hpp" // твой backend с методами Login, Register, GetChat, SendMessage
+#include "backend.hpp"
 
 std::atomic<bool> running{true};
 std::mutex coutMutex;
@@ -64,7 +64,7 @@ int main() {
         std::cout << "Login: l - Register: r -- ";
         char auth;
         std::cin >> auth;
-        std::cin.ignore(); // чтобы сбросить \n после ввода char
+        std::cin.ignore();
 
         if(auth == 'l'){
             std::cout << "Username: ";
@@ -86,7 +86,7 @@ int main() {
                 std::cout << "... - ";
                 char home;
                 std::cin >> home;
-                std::cin.ignore(); // сброс \n
+                std::cin.ignore();
                 
                 if(isdigit(home)){
                     int index = home - '0';
